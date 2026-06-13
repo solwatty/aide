@@ -53,7 +53,23 @@ const $ = s=>document.querySelector(s);
 const avg = a=>a.length? a.reduce((x,y)=>x+y,0)/a.length : 0;
 const fmtS = v=> (v>=0?"+":"")+v.toFixed(2);
 
-const state = {start:dates[0], end:dates[dates.length-1], minN:DATA.minMeetingsDefault||3,
+// Default window: the most recent 5 working days (Mon–Fri) in the data,
+// clamped to the earliest available date. Widen via the date pickers.
+function lastWorkdaysStart(endStr, n){
+  const pad=x=>String(x).padStart(2,"0");
+  const [y,m,d]=endStr.split("-").map(Number);
+  let dt=new Date(y, m-1, d), count=0;
+  while(true){
+    const wd=dt.getDay();
+    if(wd>=1 && wd<=5){ count++; if(count>=n) break; }
+    dt.setDate(dt.getDate()-1);
+  }
+  return `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())}`;
+}
+const _end = dates[dates.length-1];
+let _defStart = lastWorkdaysStart(_end, 5);
+if(_defStart < dates[0]) _defStart = dates[0];
+const state = {start:_defStart, end:_end, minN:DATA.minMeetingsDefault||3,
                scope:"all", search:"", tab:"overview", sort:{key:"mean",dir:-1}};
 
 function filtered(){
