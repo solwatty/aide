@@ -1,0 +1,83 @@
+{
+  "_comment": "Copy to config.json and edit. config.json is gitignored. All times are interpreted in `timezone`.",
+  "timezone": "Australia/Sydney",
+  "self_emails": [
+    "alex.watts@poemgroup.com.au",
+    "alex@solw.at",
+    "alexsol.watts@gmail.com"
+  ],
+  "internal_domains": [
+    "poemgroup.com.au",
+    "solw.at"
+  ],
+  "analysis": {
+    "start_date": null,
+    "end_date": null,
+    "pre_meeting_minutes": 0,
+    "post_meeting_minutes": 5,
+    "min_hr_samples": 3,
+    "min_meetings_for_leaderboard": 3,
+    "min_meeting_minutes": 10,
+    "drop_all_day_events": true,
+    "hrv_weight": 0.35
+  },
+  "client_domain_map": {
+    "sbs.com.au": "SBS",
+    "omc.com": "Omnicom",
+    "umww.com": "Omnicom / UM",
+    "droga5.com": "Droga5",
+    "naturalpetfoodgroup.com": "Natural Pet Food Group"
+  },
+  "client_keyword_map": {
+    "bankwest": "Bankwest",
+    "playstation": "PlayStation",
+    "uber eats": "Uber Eats",
+    "uber": "Uber",
+    "gyg": "Guzman y Gomez",
+    "red cross": "Red Cross",
+    "world cup": "World Cup (WRA)",
+    "wra": "World Cup (WRA)",
+    "tourism australia": "Tourism Australia",
+    "glow lab": "Glow Lab",
+    "monkey shoulder": "Monkey Shoulder",
+    "sbs": "SBS",
+    "droga": "Droga5",
+    "npfg": "Natural Pet Food Group"
+  },
+  "exclude_attendee_patterns": [
+    "boardroom",
+    "poets@poemgroup",
+    "staff_poem@",
+    "thethinker@",
+    "resource",
+    "rooms",
+    "meeting room",
+    "calendar.google.com"
+  ],
+  "stopwords_extra": [
+    "weekly",
+    "wip",
+    "catch",
+    "catchup",
+    "check",
+    "chat",
+    "sync",
+    "meeting",
+    "call",
+    "internal",
+    "regroup",
+    "ooo",
+    "al",
+    "til",
+    "note",
+    "new",
+    "poem",
+    "solwat",
+    "team",
+    "strategy",
+    "campaign",
+    "creative",
+    "updates",
+    "update"
+  ]
+}

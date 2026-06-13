@@ -1,0 +1,1217 @@
+{
+  "events": [
+    {
+      "id": "evt1",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-05-18T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-18T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt2",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-05-18T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-18T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt3",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-18T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-18T11:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt4",
+      "summary": "Design crit",
+      "start": {
+        "dateTime": "2026-05-19T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-19T10:15:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt5",
+      "summary": "Sync with Marcus",
+      "start": {
+        "dateTime": "2026-05-19T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-19T11:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt6",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-05-19T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-19T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt7",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-05-19T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-19T15:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt8",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-05-20T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-20T16:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt9",
+      "summary": "Sync with Priya",
+      "start": {
+        "dateTime": "2026-05-20T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-20T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt10",
+      "summary": "Sync with Jordan",
+      "start": {
+        "dateTime": "2026-05-20T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-20T15:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt11",
+      "summary": "Sync with Jordan",
+      "start": {
+        "dateTime": "2026-05-21T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-21T11:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt12",
+      "summary": "1:1 catch-up",
+      "start": {
+        "dateTime": "2026-05-21T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-21T14:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt13",
+      "summary": "Sync with Marcus",
+      "start": {
+        "dateTime": "2026-05-21T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-21T10:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt14",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-21T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-21T17:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt15",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-22T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-22T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt16",
+      "summary": "1:1 catch-up",
+      "start": {
+        "dateTime": "2026-05-22T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-22T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt17",
+      "summary": "Design crit",
+      "start": {
+        "dateTime": "2026-05-22T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-22T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt18",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-05-22T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-22T14:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt19",
+      "summary": "Sync with Marcus",
+      "start": {
+        "dateTime": "2026-05-25T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-25T17:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt20",
+      "summary": "Run club",
+      "start": {
+        "dateTime": "2026-05-25T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-25T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt21",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-25T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-25T10:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt22",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-05-26T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-26T14:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt23",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-05-26T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-26T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt24",
+      "summary": "Team coffee",
+      "start": {
+        "dateTime": "2026-05-26T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-26T17:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt25",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-05-27T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-27T10:15:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt26",
+      "summary": "Design crit",
+      "start": {
+        "dateTime": "2026-05-27T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-27T16:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt27",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-27T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-27T11:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt28",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-05-28T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-28T17:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt29",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-05-28T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-28T14:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt30",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-05-28T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-28T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt31",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-05-29T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-29T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt32",
+      "summary": "Run club",
+      "start": {
+        "dateTime": "2026-05-29T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-29T16:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt33",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-05-29T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-29T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt34",
+      "summary": "Design crit",
+      "start": {
+        "dateTime": "2026-05-29T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-05-29T14:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "priya.nair@acme.example",
+          "displayName": "Priya Nair",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt35",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-06-01T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-01T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt36",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-06-01T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-01T14:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt37",
+      "summary": "Sync with Marcus",
+      "start": {
+        "dateTime": "2026-06-01T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-01T11:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt38",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-06-01T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-01T10:15:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt39",
+      "summary": "Design crit",
+      "start": {
+        "dateTime": "2026-06-02T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-02T10:15:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt40",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-06-02T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-02T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt41",
+      "summary": "Team coffee",
+      "start": {
+        "dateTime": "2026-06-02T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-02T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt42",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-06-03T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-03T15:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt43",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-06-03T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-03T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt44",
+      "summary": "Sync with Lena",
+      "start": {
+        "dateTime": "2026-06-03T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-03T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt45",
+      "summary": "Sync with Sam",
+      "start": {
+        "dateTime": "2026-06-04T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-04T14:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt46",
+      "summary": "Initech roadmap",
+      "start": {
+        "dateTime": "2026-06-04T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-04T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@initech.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt47",
+      "summary": "Sync with Jordan",
+      "start": {
+        "dateTime": "2026-06-04T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-04T10:15:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "jordan.blake@acme.example",
+          "displayName": "Jordan Blake",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt48",
+      "summary": "1:1 catch-up",
+      "start": {
+        "dateTime": "2026-06-04T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-04T11:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "marcus.reed@acme.example",
+          "displayName": "Marcus Reed",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt49",
+      "summary": "Umbrella creative",
+      "start": {
+        "dateTime": "2026-06-05T14:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-05T14:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@umbrella.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt50",
+      "summary": "Globex budget review",
+      "start": {
+        "dateTime": "2026-06-05T16:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-05T16:45:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "contact@globex.example"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt51",
+      "summary": "Team coffee",
+      "start": {
+        "dateTime": "2026-06-05T09:30:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-05T10:30:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "sam.okafor@acme.example",
+          "displayName": "Sam Okafor",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "evt52",
+      "summary": "Sync with Lena",
+      "start": {
+        "dateTime": "2026-06-05T11:00:00+10:00"
+      },
+      "end": {
+        "dateTime": "2026-06-05T12:00:00+10:00"
+      },
+      "attendees": [
+        {
+          "email": "you@acme.example",
+          "self": true
+        },
+        {
+          "email": "lena.fischer@acme.example",
+          "displayName": "Lena Fischer",
+          "responseStatus": "accepted"
+        }
+      ],
+      "status": "confirmed"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "meetings": [
+    {
+      "id": "gr1",
+      "title": "Globex budget review",
+      "date": "2026-05-18T16:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr2",
+      "title": "Sync with Sam",
+      "date": "2026-05-18T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr3",
+      "title": "Initech roadmap",
+      "date": "2026-05-18T11:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr4",
+      "title": "Design crit",
+      "date": "2026-05-19T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr5",
+      "title": "Sync with Marcus",
+      "date": "2026-05-19T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr6",
+      "title": "Globex budget review",
+      "date": "2026-05-19T16:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr7",
+      "title": "Globex budget review",
+      "date": "2026-05-19T14:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr8",
+      "title": "Globex budget review",
+      "date": "2026-05-20T16:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr9",
+      "title": "Sync with Priya",
+      "date": "2026-05-20T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr10",
+      "title": "Sync with Jordan",
+      "date": "2026-05-20T14:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr11",
+      "title": "Sync with Jordan",
+      "date": "2026-05-21T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr12",
+      "title": "1:1 catch-up",
+      "date": "2026-05-21T14:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr13",
+      "title": "Sync with Marcus",
+      "date": "2026-05-21T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr14",
+      "title": "Initech roadmap",
+      "date": "2026-05-21T16:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr15",
+      "title": "Initech roadmap",
+      "date": "2026-05-22T16:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr16",
+      "title": "1:1 catch-up",
+      "date": "2026-05-22T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr17",
+      "title": "Design crit",
+      "date": "2026-05-22T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr18",
+      "title": "Umbrella creative",
+      "date": "2026-05-22T14:00:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr19",
+      "title": "Sync with Marcus",
+      "date": "2026-05-25T16:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr20",
+      "title": "Run club",
+      "date": "2026-05-25T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr21",
+      "title": "Initech roadmap",
+      "date": "2026-05-25T09:30:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr22",
+      "title": "Umbrella creative",
+      "date": "2026-05-26T14:00:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr23",
+      "title": "Sync with Sam",
+      "date": "2026-05-26T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr24",
+      "title": "Team coffee",
+      "date": "2026-05-26T16:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr25",
+      "title": "Sync with Sam",
+      "date": "2026-05-27T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr26",
+      "title": "Design crit",
+      "date": "2026-05-27T16:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr27",
+      "title": "Initech roadmap",
+      "date": "2026-05-27T11:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr28",
+      "title": "Sync with Sam",
+      "date": "2026-05-28T16:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr29",
+      "title": "Initech roadmap",
+      "date": "2026-05-28T14:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr30",
+      "title": "Umbrella creative",
+      "date": "2026-05-28T09:30:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr31",
+      "title": "Umbrella creative",
+      "date": "2026-05-29T09:30:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr32",
+      "title": "Run club",
+      "date": "2026-05-29T16:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr33",
+      "title": "Globex budget review",
+      "date": "2026-05-29T11:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr34",
+      "title": "Design crit",
+      "date": "2026-05-29T14:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr35",
+      "title": "Umbrella creative",
+      "date": "2026-06-01T16:00:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr36",
+      "title": "Globex budget review",
+      "date": "2026-06-01T14:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr37",
+      "title": "Sync with Marcus",
+      "date": "2026-06-01T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr38",
+      "title": "Globex budget review",
+      "date": "2026-06-01T09:30:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr39",
+      "title": "Design crit",
+      "date": "2026-06-02T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr40",
+      "title": "Initech roadmap",
+      "date": "2026-06-02T16:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr41",
+      "title": "Team coffee",
+      "date": "2026-06-02T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr42",
+      "title": "Initech roadmap",
+      "date": "2026-06-03T14:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr43",
+      "title": "Sync with Sam",
+      "date": "2026-06-03T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr44",
+      "title": "Sync with Lena",
+      "date": "2026-06-03T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr45",
+      "title": "Sync with Sam",
+      "date": "2026-06-04T14:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr46",
+      "title": "Initech roadmap",
+      "date": "2026-06-04T16:00:00+10:00",
+      "summary": "Discussion with Initech about deliverables and budget."
+    },
+    {
+      "id": "gr47",
+      "title": "Sync with Jordan",
+      "date": "2026-06-04T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr48",
+      "title": "1:1 catch-up",
+      "date": "2026-06-04T11:00:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr49",
+      "title": "Umbrella creative",
+      "date": "2026-06-05T14:00:00+10:00",
+      "summary": "Discussion with Umbrella about deliverables and budget."
+    },
+    {
+      "id": "gr50",
+      "title": "Globex budget review",
+      "date": "2026-06-05T16:00:00+10:00",
+      "summary": "Discussion with Globex about deliverables and budget."
+    },
+    {
+      "id": "gr51",
+      "title": "Team coffee",
+      "date": "2026-06-05T09:30:00+10:00",
+      "summary": ""
+    },
+    {
+      "id": "gr52",
+      "title": "Sync with Lena",
+      "date": "2026-06-05T11:00:00+10:00",
+      "summary": ""
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Core analyzer runs on the Python standard library alone.
+# Charts are optional — install matplotlib to render PNGs in the HTML report.
+matplotlib>=3.6 ; python_version >= "3.9"

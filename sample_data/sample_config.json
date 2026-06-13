@@ -1,0 +1,24 @@
+{
+  "timezone": "Australia/Sydney",
+  "self_emails": ["you@acme.example"],
+  "internal_domains": ["acme.example"],
+  "analysis": {
+    "min_meetings_for_leaderboard": 3,
+    "min_meeting_minutes": 10,
+    "post_meeting_minutes": 5,
+    "hrv_weight": 0.35
+  },
+  "client_domain_map": {
+    "globex.example": "Globex",
+    "initech.example": "Initech",
+    "umbrella.example": "Umbrella"
+  },
+  "client_keyword_map": {
+    "globex": "Globex",
+    "initech": "Initech",
+    "umbrella": "Umbrella"
+  },
+  "stopwords_extra": [
+    "sync", "catch", "catchup", "discussion", "deliverables", "review", "meeting", "with"
+  ]
+}

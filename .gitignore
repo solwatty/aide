@@ -1,0 +1,19 @@
+# Real personal data lives in /data/ and root config.json — never commit them.
+# Synthetic sample_data/ IS tracked so the tool runs out of the box.
+/data/
+/config.json
+*.private.*
+
+# Generated outputs
+/out/
+err.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
