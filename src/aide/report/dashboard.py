@@ -6,7 +6,14 @@ All leaderboards are recomputed client-side as you change the filters.
 """
 from __future__ import annotations
 
+import html as _html
 import json
+from datetime import timedelta
+
+from ..analyze.attribution import attribute_clients, attribute_people
+from ..analyze.keywords import stress_keywords
+from ..config import Config
+from ..models import MeetingStress
 
 _CSS = """
 :root{--pos:#d1495b;--neg:#3a86ff;--ink:#1d1d1f;--mut:#86868b;--line:#e8e8ed;--bg:#f5f5f7}
@@ -217,6 +224,9 @@ function renderMeetings(){
 
 // ---- wire up -------------------------------------------------------------
 function bind(){
+  // progressive enhancement: reveal the interactive app, drop the static fallback
+  const app=document.getElementById("app"); if(app) app.style.display="";
+  const fb=document.getElementById("fallback"); if(fb) fb.remove();
   $("#start").value=state.start; $("#start").min=dates[0]; $("#start").max=dates[dates.length-1];
   $("#end").value=state.end; $("#end").min=dates[0]; $("#end").max=dates[dates.length-1];
   $("#minN").value=state.minN;
@@ -235,7 +245,75 @@ bind(); render();
 """
 
 
-def render_dashboard(data: dict) -> str:
+def _default_window(stresses: list[MeetingStress]):
+    """Mirror of the JS default: the last 5 working days present in the data."""
+    days = sorted({s.meeting.start.date() for s in stresses if s.has_data})
+    if not days:
+        return None, None
+    end, d, count = days[-1], days[-1], 0
+    while True:
+        if d.weekday() < 5:
+            count += 1
+            if count >= 5:
+                break
+        d -= timedelta(days=1)
+    return max(d, days[0]), end
+
+
+def _ssr_table(title: str, tallies, with_type: bool, limit: int = 15) -> str:
+    rows = []
+    for t in tallies[:limit]:
+        cls = "pos" if t.mean_score >= 0 else "neg"
+        typ = (
+            f"<td><span class='tag'>{'internal' if t.internal else 'external'}</span></td>"
+            if with_type else ""
+        )
+        rows.append(
+            f"<tr><td>{_html.escape(t.label)}</td><td class='num'>{t.n}</td>"
+            f"<td class='num {cls}'>{t.mean_score:+.2f}</td>"
+            f"<td class='num'>{t.mean_hr_elevation:+.1f}</td>{typ}</tr>"
+        )
+    body = "".join(rows) or "<tr><td class='muted'>Not enough data in this window.</td></tr>"
+    extra = "<th>type</th>" if with_type else ""
+    return (
+        f"<div class='card'><h2>{_html.escape(title)}</h2><table>"
+        f"<tr><th>name</th><th class='num'>mtgs</th><th class='num'>stress</th>"
+        f"<th class='num'>ΔHR</th>{extra}</tr>{body}</table></div>"
+    )
+
+
+def build_fallback_html(stresses: list[MeetingStress], config: Config) -> str:
+    """Static, JS-free view of the default window — shown if scripts can't run
+    (e.g. a sandboxed file preview). JavaScript removes it and takes over when
+    the file is opened in a real browser."""
+    start, end = _default_window(stresses)
+    if start is None:
+        return "<div class='card muted'>No scored meetings to display.</div>"
+    sub = [s for s in stresses if s.has_data and start <= s.meeting.start.date() <= end]
+    people = attribute_people(sub, config)
+    clients = attribute_clients(sub, config)
+    keywords = stress_keywords(sub, config, top=15)
+    elev = [s.hr_elevation for s in sub]
+    mean_elev = sum(elev) / len(elev) if elev else 0.0
+    peak = max(sub, key=lambda s: s.hr_elevation) if sub else None
+    kpis = (
+        f"<div class='kpi'><div class='v'>{len(sub)}</div><div class='l'>meetings ({start} → {end})</div></div>"
+        f"<div class='kpi'><div class='v'>{mean_elev:+.1f} bpm</div><div class='l'>mean ΔHR over resting</div></div>"
+        + (f"<div class='kpi'><div class='v'>+{peak.hr_elevation:.0f} bpm</div>"
+           f"<div class='l'>peak: {_html.escape(peak.meeting.title)[:28]}</div></div>" if peak else "")
+    )
+    return (
+        "<div class='hint' style='margin-bottom:12px'>Static view of your last 5 working days. "
+        "<b>Open this file in a web browser</b> for the full interactive dashboard "
+        "(date-range, filters, charts).</div>"
+        f"<div class='kpis'>{kpis}</div>"
+        + _ssr_table("Colleagues — who raises your stress most", people, True)
+        + _ssr_table("Clients / accounts — most stressful", clients, False)
+        + _ssr_table("Topics & keywords — most stress-associated", keywords, False)
+    )
+
+
+def render_dashboard(data: dict, fallback_html: str = "") -> str:
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -254,6 +332,8 @@ def render_dashboard(data: dict) -> str:
   </div>
 </header>
 <div class="wrap">
+  <div id="fallback">{fallback_html}</div>
+  <div id="app" style="display:none">
   <div class="kpis" id="kpis"></div>
   <nav>
     <button data-tab="overview" class="active">Overview</button>
@@ -289,6 +369,7 @@ def render_dashboard(data: dict) -> str:
   <div data-pane="meetings" class="hidden">
     <div class="card"><h2>Meetings (most activating first)</h2><div id="meetingTable"></div></div>
   </div>
+  </div><!-- /#app -->
 </div>
 <script id="aide-data" type="application/json">{payload}</script>
 <script>{_JS}</script>

@@ -70,7 +70,7 @@ def test_dashboard_data_and_html(sample_built):
     import json
     import re
 
-    from aide.report.dashboard import render_dashboard
+    from aide.report.dashboard import build_fallback_html, render_dashboard
     from aide.report.data_export import build_dashboard_data
 
     config, stresses = sample_built
@@ -79,7 +79,14 @@ def test_dashboard_data_and_html(sample_built):
     scored = [m for m in data["meetings"] if m["hasData"]]
     assert scored and all("stress" in m and "people" in m for m in scored)
 
-    html = render_dashboard(data)
+    # no-JS fallback must contain real, server-rendered table rows
+    fallback = build_fallback_html(stresses, config)
+    assert "<table>" in fallback and fallback.count("<tr>") > 3
+
+    html = render_dashboard(data, fallback)
+    # interactive app starts hidden and is revealed by JS; fallback shows otherwise
+    assert 'id="app" style="display:none"' in html
+    assert 'id="fallback"' in html
     # the embedded JSON must survive escaping and re-parse cleanly
     payload = re.search(
         r'<script id="aide-data" type="application/json">(.*?)</script>', html, re.S

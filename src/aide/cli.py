@@ -17,7 +17,7 @@ from .config import Config
 from .ingest.apple_health import load_apple_health
 from .ingest.meetings import _tz, filter_meetings, load_calendar, load_granola, merge
 from .report import charts, html, leaderboard
-from .report.dashboard import render_dashboard
+from .report.dashboard import build_fallback_html, render_dashboard
 from .report.data_export import build_dashboard_data
 
 
@@ -78,7 +78,9 @@ def run_analyze(args) -> int:
         html.render_html(summary, people, clients, keywords, people_png, clients_png)
     )
 
-    dashboard = render_dashboard(build_dashboard_data(stresses, config))
+    dashboard = render_dashboard(
+        build_dashboard_data(stresses, config), build_fallback_html(stresses, config)
+    )
     (out / "dashboard.html").write_text(dashboard)
     print(
         f"• Wrote {out/'report.md'}, {out/'report.html'} and {out/'dashboard.html'}",
