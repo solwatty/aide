@@ -66,6 +66,29 @@ def test_keywords_surface_villain_or_client(sample_built):
     assert "globex" in kws or "jordan" in kws
 
 
+def test_dashboard_data_and_html(sample_built):
+    import json
+    import re
+
+    from aide.report.dashboard import render_dashboard
+    from aide.report.data_export import build_dashboard_data
+
+    config, stresses = sample_built
+    data = build_dashboard_data(stresses, config)
+    assert data["meetings"], "expected meetings in dashboard data"
+    scored = [m for m in data["meetings"] if m["hasData"]]
+    assert scored and all("stress" in m and "people" in m for m in scored)
+
+    html = render_dashboard(data)
+    # the embedded JSON must survive escaping and re-parse cleanly
+    payload = re.search(
+        r'<script id="aide-data" type="application/json">(.*?)</script>', html, re.S
+    ).group(1)
+    assert "</script>" not in payload
+    parsed = json.loads(payload.replace("<\\/", "</"))
+    assert len(parsed["meetings"]) == len(data["meetings"])
+
+
 def test_rooms_excluded_from_people():
     """Attendees matching exclude patterns never reach the leaderboard."""
     config = Config.from_dict({

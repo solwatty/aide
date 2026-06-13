@@ -33,7 +33,7 @@ keywords that travel with your most elevated meetings.
    the client(s) it maps to (external email domain + title keywords), and to the
    words in its title/notes. Aggregate and rank.
 5. **Report** — Markdown + a self-contained HTML report, with PNG charts if
-   `matplotlib` is installed.
+   `matplotlib` is installed. It also writes an interactive `dashboard.html` (date-range, internal/external, min-meetings and search filters, all recomputed client-side — open it straight in a browser).
 
 ## Install
 
