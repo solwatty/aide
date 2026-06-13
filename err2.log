@@ -1,0 +1,5 @@
+• Loading health data from data/Export.csv …
+  32342 HR samples, 553 HRV samples
+• 154 meetings after merge+filter
+• 141 meetings scored against heart rate
+• Wrote out/report.md and out/report.html

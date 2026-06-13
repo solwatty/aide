@@ -14,12 +14,28 @@ from ..models import MeetingStress
 from .attribution import Tally
 
 # A compact English stoplist — enough to keep meeting titles signal-rich.
+# Expanded because we now mine Granola summaries (full prose), not just titles.
 _STOP = {
+    # articles / conjunctions / prepositions / pronouns
     "the", "a", "an", "and", "or", "but", "of", "to", "in", "on", "for", "with",
-    "at", "by", "from", "up", "about", "into", "over", "after", "is", "are", "was",
-    "were", "be", "been", "being", "this", "that", "these", "those", "it", "its",
-    "as", "if", "then", "so", "than", "too", "very", "can", "will", "just", "vs",
-    "via", "amp", "x", "no", "title", "untitled", "re", "&", "-", "—", "1", "2", "3",
+    "at", "by", "from", "up", "about", "into", "over", "after", "before", "between",
+    "out", "off", "down", "under", "again", "further", "then", "once", "here", "there",
+    "all", "any", "both", "each", "few", "more", "most", "other", "some", "such",
+    "is", "are", "was", "were", "be", "been", "being", "am", "this", "that", "these",
+    "those", "it", "its", "as", "if", "so", "than", "too", "very", "can", "will",
+    "just", "vs", "via", "amp", "no", "not", "only", "own", "same", "he", "she",
+    "they", "them", "their", "we", "our", "us", "you", "your", "i", "me", "my", "his",
+    "her", "him", "who", "whom", "which", "what", "when", "where", "why", "how",
+    "do", "does", "did", "doing", "have", "has", "had", "having", "would", "could",
+    "should", "may", "might", "must", "shall", "also", "while", "because", "since",
+    "ago", "now", "still", "yet", "ever", "even", "much", "many", "well", "back",
+    # generic meeting / business filler that isn't a topic
+    "title", "untitled", "re", "meeting", "discussion", "discussed", "talk", "talked",
+    "need", "needs", "want", "wants", "like", "around", "across", "within", "without",
+    "home", "base", "enough", "focused", "focus", "going", "make", "made", "get",
+    "got", "one", "two", "three", "first", "next", "last", "new", "good", "great",
+    "thing", "things", "lot", "lots", "way", "ways", "use", "used", "using", "work",
+    "working", "plan", "planning", "idea", "ideas", "point", "points", "note", "notes",
 }
 
 _TOKEN = re.compile(r"[a-z][a-z'&-]+")
