@@ -121,13 +121,28 @@ def _load_xml(path: Path, assume_tz=None) -> HealthData:
     return HealthData(hr, hrv, resting)
 
 
+def _is_hr_col(c: str) -> bool:
+    """True for the instantaneous heart-rate column, not derivatives/events.
+
+    Must start with "heart rate" so 'Event: High heart rate', 'Resting heart
+    rate', 'Walking heart rate average' and 'Heart rate variability' are excluded.
+    """
+    return c.startswith("heart rate") and not any(
+        x in c for x in ("variability", "resting", "walking", "event", "recovery")
+    )
+
+
+def _is_hrv_col(c: str) -> bool:
+    return ("variability" in c or "sdnn" in c) and "event" not in c
+
+
 def _load_csv(path: Path, assume_tz=None) -> HealthData:
     """CSV loader supporting two shapes.
 
     Wide (Apple "Health Auto Export" daily/by-minute): a single Date column plus
     one column per metric, e.g. ``Heart rate(count/min)``, ``Resting heart
-    rate(count/min)``, ``Heart rate variability(ms)``. Detected when a
-    heart-rate-named column exists alongside the timestamp.
+    rate(count/min)``, ``Heart rate variability (SDNN)(ms)``. Detected when a
+    heart-rate column exists alongside the timestamp.
 
     Long: a timestamp column, a value column, and (optionally) a type column.
     """
@@ -140,9 +155,7 @@ def _load_csv(path: Path, assume_tz=None) -> HealthData:
         if ts_col is None:
             raise ValueError(f"CSV {path} has no recognizable timestamp column: {reader.fieldnames}")
 
-        hr_col = _match(cols, lambda c: "heart rate" in c and not any(
-            x in c for x in ("resting", "walking", "variability", "recovery")))
-        if hr_col:
+        if _match(cols, _is_hr_col):
             return _read_wide(reader, ts_col, cols, assume_tz)
         return _read_long(reader, ts_col, cols, path.stem.lower(), assume_tz)
 
@@ -151,10 +164,9 @@ def _read_wide(reader, ts_col, cols, assume_tz) -> HealthData:
     hr: list[HRSample] = []
     hrv: list[HRVSample] = []
     resting: dict = {}
-    hr_col = _match(cols, lambda c: "heart rate" in c and not any(
-        x in c for x in ("resting", "walking", "variability", "recovery")))
+    hr_col = _match(cols, _is_hr_col)
     resting_col = _match(cols, lambda c: "resting heart rate" in c)
-    hrv_col = _match(cols, lambda c: "variability" in c or "sdnn" in c)
+    hrv_col = _match(cols, _is_hrv_col)
 
     for row in reader:
         ts = _localize(parse_health_datetime(row.get(ts_col, "")), assume_tz)

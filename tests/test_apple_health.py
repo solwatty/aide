@@ -49,6 +49,23 @@ def test_load_wide_csv_localizes_naive_timestamps(tmp_path):
     assert h.resting_hr[datetime(2026, 6, 1).date()] == 55.0
 
 
+def test_wide_csv_ignores_event_and_derivative_hr_columns(tmp_path):
+    """'Event: High heart rate' / walking/resting columns must not be picked as
+    the instantaneous HR source (regression: they preceded the real column)."""
+    csv = tmp_path / "Export.csv"
+    csv.write_text(
+        "Date,Event: High heart rate,Heart rate(count/min),"
+        "Heart rate variability (SDNN)(ms),Resting heart rate(count/min),"
+        "Walking heart rate average(count/min)\n"
+        "2026-06-01 09:30:00,,88.0,42.0,55.0,95.0\n"
+        "2026-06-01 09:31:00,,92.0,,55.0,\n"
+    )
+    h = load_apple_health(csv, assume_tz=SYD)
+    assert [s.bpm for s in h.hr] == [88.0, 92.0]
+    assert [s.sdnn_ms for s in h.hrv] == [42.0]
+    assert h.resting_hr[datetime(2026, 6, 1).date()] == 55.0
+
+
 def test_load_long_csv(tmp_path):
     csv = tmp_path / "hr.csv"
     csv.write_text(
