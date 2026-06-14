@@ -67,6 +67,7 @@ def render_report(
     people: list[Tally],
     clients: list[Tally],
     keywords: list[Tally],
+    themes: list[Tally] | None = None,
 ) -> str:
     parts = [
         "# Stress Correlation Report",
@@ -74,7 +75,11 @@ def render_report(
         summary,
         render_table(people, "Colleagues — who raises your stress most", show_internal=True),
         render_table(clients, "Clients / accounts — most stressful"),
-        render_table(keywords, "Topics & keywords — most stress-associated"),
+    ]
+    if themes:
+        parts.append(render_table(themes, "Themes — meeting types most stress-associated"))
+    parts += [
+        render_table(keywords, "Keywords — individual words most stress-associated"),
         "---",
         "_ΔHR = average heart-rate elevation (bpm) above your daily resting rate during "
         "those meetings. Correlation, not causation — a packed calendar, deadlines and "

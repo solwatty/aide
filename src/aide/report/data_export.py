@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from ..analyze.attribution import clients_for_meeting
+from ..analyze.attribution import clients_for_meeting, themes_for_meeting
 from ..analyze.keywords import _STOP, _tokens
 from ..config import Config
 from ..models import MeetingStress
@@ -21,6 +21,7 @@ def build_dashboard_data(stresses: list[MeetingStress], config: Config) -> dict:
             if a.email and config.is_person(a.email, a.name)
         ]
         clients = sorted(clients_for_meeting(m, config))
+        themes = sorted(themes_for_meeting(m, config))
         keywords = sorted(_tokens(m.text, stop)) if s.has_data else []
         meetings.append(
             {
@@ -39,6 +40,7 @@ def build_dashboard_data(stresses: list[MeetingStress], config: Config) -> dict:
                 "stress": round(s.stress_score, 3) if s.stress_score is not None else None,
                 "people": people,
                 "clients": clients,
+                "themes": themes,
                 "keywords": keywords,
             }
         )

@@ -51,6 +51,9 @@ class Config:
     client_domain_map: dict[str, str] = field(default_factory=dict)
     client_keyword_map: dict[str, str] = field(default_factory=dict)
     stopwords_extra: set[str] = field(default_factory=set)
+    # theme name -> list of lowercased keywords/phrases; a meeting joins a theme
+    # if any phrase appears in its title/notes.
+    themes: dict[str, list[str]] = field(default_factory=dict)
     # Substrings identifying non-people (meeting rooms, distribution lists, resources)
     # to keep out of the colleague leaderboard.
     exclude_attendee_patterns: set[str] = field(default_factory=set)
@@ -70,6 +73,10 @@ class Config:
             client_domain_map={k.lower(): v for k, v in raw.get("client_domain_map", {}).items()},
             client_keyword_map={k.lower(): v for k, v in raw.get("client_keyword_map", {}).items()},
             stopwords_extra={w.lower() for w in raw.get("stopwords_extra", [])},
+            themes={
+                name: [p.lower() for p in phrases]
+                for name, phrases in raw.get("themes", {}).items()
+            },
             exclude_attendee_patterns={p.lower() for p in raw.get("exclude_attendee_patterns", [])},
             analysis=AnalysisConfig.from_dict(raw.get("analysis", {})),
         )

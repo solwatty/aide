@@ -15,8 +15,7 @@ import json
 import math
 from datetime import timedelta
 
-from ..analyze.attribution import attribute_clients, attribute_people
-from ..analyze.keywords import stress_keywords
+from ..analyze.attribution import attribute_clients, attribute_people, attribute_themes
 from ..config import Config
 from ..models import MeetingStress
 
@@ -95,6 +94,10 @@ tbody tr:hover{background:#fafafb}
 .legend .ramp{height:8px;width:120px;border-radius:4px;
   background:linear-gradient(90deg,#2a9d8f,#e9c46a,#e76f51)}
 .hidden{display:none}
+.seg{display:inline-flex;background:#f0f1f4;border-radius:999px;padding:3px}
+.seg button{font:12.5px inherit;font-weight:600;border:0;background:transparent;color:var(--mut);
+  padding:6px 14px;border-radius:999px;cursor:pointer}
+.seg button.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:720px){.grid2{grid-template-columns:1fr}}
 svg text{font:10px ui-sans-serif,-apple-system,sans-serif;fill:var(--mut)}
@@ -123,14 +126,15 @@ function lastWorkdaysStart(endStr,n){const pad=x=>String(x).padStart(2,"0");
   return `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())}`;}
 const _end=dates[dates.length-1];let _def=lastWorkdaysStart(_end,5);if(_def<dates[0])_def=dates[0];
 const state={start:_def,end:_end,minN:DATA.minMeetingsDefault||3,scope:"all",search:"",tab:"overview",
-  sort:{key:"mean",dir:-1}};
+  topicMode:"themes",sort:{key:"mean",dir:-1}};
 
 const filtered=()=>scored.filter(m=>m.date>=state.start&&m.date<=state.end);
 function aggregate(field){
   const ms=filtered(),map=new Map();
   for(const m of ms){
-    let items=field==="people"?m.people:field==="clients"?m.clients.map(c=>({key:c,label:c,internal:null}))
-              :m.keywords.map(k=>({key:k,label:k,internal:null}));
+    const asItems=arr=>arr.map(c=>({key:c,label:c,internal:null}));
+    let items=field==="people"?m.people:field==="clients"?asItems(m.clients)
+              :field==="themes"?asItems(m.themes):asItems(m.keywords);
     for(const it of items){let a=map.get(it.key);
       if(!a){a={label:it.label,internal:it.internal,scores:[],deltas:[]};map.set(it.key,a);}
       a.label=it.label;a.scores.push(m.stress);a.deltas.push(m.deltaHR);}
@@ -229,7 +233,10 @@ function render(){
   }
   if(state.tab==="people"){const r=aggregate("people");$("#peopleTable").innerHTML=table(r,true);}
   if(state.tab==="clients"){const r=aggregate("clients");$("#clientTable").innerHTML=table(r,false);}
-  if(state.tab==="topics"){const r=aggregate("keywords");$("#topicTable").innerHTML=table(r,false);}
+  if(state.tab==="topics"){
+    document.querySelectorAll("#topicSeg button").forEach(b=>b.classList.toggle("active",b.dataset.mode===state.topicMode));
+    const r=aggregate(state.topicMode==="keywords"?"keywords":"themes");$("#topicTable").innerHTML=table(r,false);
+  }
   if(state.tab==="meetings"){renderMeetings();}
 }
 function bind(){
@@ -244,6 +251,7 @@ function bind(){
   $("#scope").onchange=e=>{state.scope=e.target.value;render();};
   $("#search").oninput=e=>{state.search=e.target.value;render();};
   document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;state.search="";$("#search").value="";render();});
+  document.querySelectorAll("#topicSeg button").forEach(b=>b.onclick=()=>{state.topicMode=b.dataset.mode;render();});
   document.body.addEventListener("click",e=>{const th=e.target.closest("th[data-sort]");if(!th)return;
     const k=th.dataset.sort;state.sort.dir=state.sort.key===k?-state.sort.dir:-1;state.sort.key=k;render();});
 }
@@ -305,7 +313,7 @@ def build_fallback_html(stresses: list[MeetingStress], config: Config) -> str:
     sub = [s for s in stresses if s.has_data and start <= s.meeting.start.date() <= end]
     people = attribute_people(sub, config)
     clients = attribute_clients(sub, config)
-    keywords = stress_keywords(sub, config, top=12)
+    themes = attribute_themes(sub, config)
     elev = [s.hr_elevation for s in sub]
     mean_elev = sum(elev) / len(elev) if elev else 0.0
     avg_idx = round(sum(z_to_index(s.stress_score) for s in sub) / len(sub)) if sub else 50
@@ -325,7 +333,7 @@ def build_fallback_html(stresses: list[MeetingStress], config: Config) -> str:
         f"<div class='kpis'>{kpis}</div>"
         + _ssr_table("Colleagues — who raises your stress most", people, True)
         + _ssr_table("Clients / accounts — most stressful", clients, False)
-        + _ssr_table("Topics & keywords — most stress-associated", keywords, False)
+        + _ssr_table("Themes — meeting types most stress-associated", themes, False)
     )
 
 
@@ -384,7 +392,13 @@ def render_dashboard(data: dict, fallback_html: str = "") -> str:
     <div class="card"><h2>Clients / accounts — most stressful</h2><p class="cap">By external attendee domain and meeting keywords.</p><div id="clientTable"></div></div>
   </div>
   <div data-pane="topics" class="hidden">
-    <div class="card"><h2>Topics & keywords — most stress-associated</h2><p class="cap">Mined from meeting titles and Granola summaries.</p><div id="topicTable"></div></div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div><h2>What kind of meeting stresses you</h2>
+          <p class="cap" style="margin-bottom:0">Themes group meetings by type; keywords are individual words. Mined from titles + Granola summaries.</p></div>
+        <div class="seg" id="topicSeg"><button data-mode="themes" class="active">Themes</button><button data-mode="keywords">Keywords</button></div>
+      </div>
+      <div id="topicTable" style="margin-top:14px"></div></div>
   </div>
   <div data-pane="meetings" class="hidden">
     <div class="card"><h2>Meetings — most activating first</h2><div id="meetingTable"></div></div>

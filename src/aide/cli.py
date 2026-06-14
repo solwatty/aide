@@ -9,7 +9,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from .analyze.attribution import attribute_clients, attribute_people
+from .analyze.attribution import attribute_clients, attribute_people, attribute_themes
 from .analyze.baseline import compute_baselines
 from .analyze.keywords import stress_keywords
 from .analyze.stress import score_meetings
@@ -57,10 +57,11 @@ def run_analyze(args) -> int:
 
     people = attribute_people(stresses, config)
     clients = attribute_clients(stresses, config)
+    themes = attribute_themes(stresses, config)
     keywords = stress_keywords(stresses, config, top=args.top)
 
     summary = leaderboard.render_summary(stresses)
-    report_md = leaderboard.render_report(summary, people, clients, keywords)
+    report_md = leaderboard.render_report(summary, people, clients, keywords, themes)
     (out / "report.md").write_text(report_md)
     print("\n" + report_md)
 

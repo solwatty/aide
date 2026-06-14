@@ -79,5 +79,148 @@
     "creative",
     "updates",
     "update"
-  ]
+  ],
+  "themes": {
+    "New business & pitching": [
+      "pitch",
+      "credential",
+      "new business",
+      "proposal",
+      "qualif",
+      "funding",
+      "tender",
+      "rfp",
+      "scope of work"
+    ],
+    "Financials & ops": [
+      "financ",
+      "revenue",
+      "profit",
+      "budget",
+      "forecast",
+      "efficien",
+      "restructur",
+      "tax",
+      "merger",
+      "invoice",
+      "fees",
+      "p&l",
+      "cashflow",
+      "margin",
+      "operations"
+    ],
+    "Creative development": [
+      "creative",
+      "concept",
+      "ideation",
+      "brainstorm",
+      "workshop",
+      "crit",
+      "copy",
+      "script",
+      "design",
+      "refinement"
+    ],
+    "Brand & strategy": [
+      "brand",
+      "strategy",
+      "strategic",
+      "positioning",
+      "cultural",
+      "audience",
+      "reputation",
+      "anchor",
+      "territory"
+    ],
+    "Talent & influencers": [
+      "talent",
+      "influencer",
+      "creator",
+      "ambassador",
+      "celebrity",
+      "irwin",
+      "johnson",
+      "partnership"
+    ],
+    "Production & delivery": [
+      "production",
+      "launch",
+      "footage",
+      "edit",
+      "hype reel",
+      "shoot",
+      "asset",
+      "rollout",
+      "approval",
+      "timeline",
+      "press"
+    ],
+    "Client WIP & status": [
+      "wip",
+      "weekly",
+      "check-in",
+      "check in",
+      "catch-up",
+      "catch up",
+      "status",
+      "regroup",
+      "account lead"
+    ],
+    "Measurement & reporting": [
+      "kpi",
+      "metric",
+      "roi",
+      "measurement",
+      "performance",
+      "analytics",
+      "reach",
+      "cost per",
+      "results"
+    ],
+    "Media & comms": [
+      "media",
+      "comms",
+      "earned",
+      "coverage",
+      "placement",
+      "social"
+    ],
+    "Team & people": [
+      "leadership",
+      "hiring",
+      "compensation",
+      "staffing",
+      "severance",
+      "roles",
+      "capacity",
+      "headcount"
+    ],
+    "Tools & product": [
+      "tool",
+      "platform",
+      "monday",
+      "claude",
+      "mcp",
+      "trending",
+      "pulse",
+      "predictive",
+      "bigdatr",
+      "booking",
+      "notetaker",
+      "meltwater",
+      "dashboard"
+    ],
+    "Personal & social": [
+      "d&d",
+      "run club",
+      "coffee",
+      "house hunting",
+      "work-life",
+      "reflection",
+      "emotional",
+      "gossip",
+      "wellbeing",
+      "catch up"
+    ]
+  }
 }

@@ -1,7 +1,11 @@
 {
   "timezone": "Australia/Sydney",
-  "self_emails": ["you@acme.example"],
-  "internal_domains": ["acme.example"],
+  "self_emails": [
+    "you@acme.example"
+  ],
+  "internal_domains": [
+    "acme.example"
+  ],
   "analysis": {
     "min_meetings_for_leaderboard": 3,
     "min_meeting_minutes": 10,
@@ -19,6 +23,26 @@
     "umbrella": "Umbrella"
   },
   "stopwords_extra": [
-    "sync", "catch", "catchup", "discussion", "deliverables", "review", "meeting", "with"
-  ]
+    "sync",
+    "catch",
+    "catchup",
+    "discussion",
+    "deliverables",
+    "review",
+    "meeting",
+    "with"
+  ],
+  "themes": {
+    "Budget talks": [
+      "budget"
+    ],
+    "Roadmapping": [
+      "roadmap"
+    ],
+    "Social": [
+      "coffee",
+      "run club",
+      "1:1"
+    ]
+  }
 }

@@ -113,6 +113,7 @@ as a prompt for reflection, not a verdict on a person.
 | `client_keyword_map` | keyword in a title/notes → client name |
 | `exclude_attendee_patterns` | substrings (email or name) for rooms/lists to drop |
 | `stopwords_extra` | extra words to ignore in keyword mining |
+| `themes` | theme name → keywords/phrases; groups meetings into types (e.g. "Creative development") for the Themes leaderboard |
 | `analysis.post_meeting_minutes` | minutes after a meeting still counted (spillover) |
 | `analysis.min_hr_samples` | min HR readings in-window to score a meeting |
 | `analysis.min_meetings_for_leaderboard` | min meetings to appear on a leaderboard |

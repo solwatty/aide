@@ -85,6 +85,26 @@ def clients_for_meeting(meeting, config: Config) -> set[str]:
     return clients
 
 
+def themes_for_meeting(meeting, config: Config) -> set[str]:
+    """Higher-level meeting types a meeting belongs to (config-driven taxonomy).
+    A meeting joins every theme any of whose phrases appears in its text."""
+    text = meeting.text.lower()
+    return {name for name, phrases in config.themes.items() if any(p in text for p in phrases)}
+
+
+def attribute_themes(stresses: list[MeetingStress], config: Config) -> list[Tally]:
+    tallies: dict[str, Tally] = {}
+    for s in stresses:
+        if not s.has_data:
+            continue
+        for theme in themes_for_meeting(s.meeting, config):
+            t = tallies.setdefault(theme, Tally(theme, theme))
+            t.scores.append(s.stress_score)
+            t.hr_elevations.append(s.hr_elevation)
+            t.meeting_titles.append(s.meeting.title)
+    return _rank(list(tallies.values()), config.analysis.min_meetings_for_leaderboard)
+
+
 def attribute_clients(stresses: list[MeetingStress], config: Config) -> list[Tally]:
     tallies: dict[str, Tally] = {}
     for s in stresses:

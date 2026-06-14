@@ -60,6 +60,19 @@ def test_stressful_client_is_globex(sample_built):
     assert clients[0].label == "Globex"
 
 
+def test_themes_group_meetings(sample_built):
+    from aide.analyze.attribution import attribute_themes
+
+    config, stresses = sample_built
+    themes = {t.label: t for t in attribute_themes(stresses, config)}
+    # the sample config defines a "Budget talks" theme matching Globex budget meetings
+    assert "Budget talks" in themes
+    assert themes["Budget talks"].n >= config.analysis.min_meetings_for_leaderboard
+    # budget meetings carry the villain client's bump, so they sit above the social ones
+    if "Social" in themes:
+        assert themes["Budget talks"].mean_score > themes["Social"].mean_score
+
+
 def test_keywords_surface_villain_or_client(sample_built):
     config, stresses = sample_built
     kws = {t.label for t in stress_keywords(stresses, config)}
